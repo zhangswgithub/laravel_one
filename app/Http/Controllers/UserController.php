@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
 use App\Models\User;
 use App\Models\Config;
 use App\Models\Integral;
@@ -12,8 +11,13 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    // 注册用户
-    public function Register(UserRequest $request)
+    /**
+     * 注册时实现分销
+     * TODO： 分销还有其他实现方式，例如模型监听或者事务等，均可以实现
+     * @param UserRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function Register(Request $request)
     {
         $param = $request->only(['name','email','password','code']);
         $param['password'] = Hash::make($param['password']);
