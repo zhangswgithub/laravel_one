@@ -8,6 +8,7 @@ use App\Models\Config;
 use App\Models\Integral;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -17,7 +18,7 @@ class UserController extends Controller
      * @param UserRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function Register(Request $request)
+    public function Register(UserRequest $request)
     {
         $param = $request->only(['name','email','password','code']);
         $param['password'] = Hash::make($param['password']);

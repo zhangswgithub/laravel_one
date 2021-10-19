@@ -7,4 +7,4 @@
     * 可以直接使用 php artisan serve 来进行http访问
     * 注册：http://127.0.0.1:8000/register
     * 获取无限极用户：http://127.0.0.1:8000/user/{id?}
-6. Artisan 命令： php artisan user:top_ten 已经加到任务调度中 
+6. top 10 写入日志： artisan 命令： php artisan user:top_ten 已经加到任务调度中 
